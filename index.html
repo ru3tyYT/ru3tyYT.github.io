@@ -1,632 +1,414 @@
-http://ru3tyyt.github.io/Personal-Profolio/<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>mason's Portfolio</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <title>Mason | AI Enthusiast & Modern Solutions Coder</title>
+    <meta name="description"
+        content="Mason | AI Enthusiast and Modern Solutions Coder. Specialist in scalable AI solutions and system optimization.">
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
-            color: #fff;
-            overflow-x: hidden;
-        }
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap"
+        rel="stylesheet">
 
-        /* Navigation */
-        nav {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 20px 40px;
-            display: flex;
-            justify-content: center;
-            gap: 40px;
-            z-index: 1000;
-            border-bottom: 2px solid rgba(0, 212, 255, 0.3);
-        }
+    <!-- Icons CDN (Lucide) -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 
-        nav a {
-            color: #00d4ff;
-            text-decoration: none;
-            font-size: 1.2rem;
-            font-weight: bold;
-            padding: 10px 20px;
-            border-radius: 8px;
-            transition: all 0.3s ease;
-        }
-
-        nav a:hover, nav a.active {
-            background: rgba(0, 212, 255, 0.2);
-            transform: translateY(-2px);
-        }
-
-        /* Landing Section */
-        .landing {
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            position: relative;
-            padding-top: 80px;
-        }
-
-        .typing-container {
-            font-size: 3rem;
-            font-weight: bold;
-            text-align: center;
-            padding: 0 20px;
-        }
-
-        .typing-text {
-            color: #00d4ff;
-            border-right: 3px solid #00d4ff;
-            padding-right: 5px;
-            animation: blink 0.7s infinite;
-        }
-
-        @keyframes blink {
-            0%, 50% { border-color: #00d4ff; }
-            51%, 100% { border-color: transparent; }
-        }
-
-        .scroll-indicator {
-            position: absolute;
-            bottom: 30px;
-            font-size: 2rem;
-            color: #00d4ff;
-            animation: bounce 2s infinite;
-            cursor: pointer;
-        }
-
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
-            40% { transform: translateY(-20px); }
-            60% { transform: translateY(-10px); }
-        }
-
-        /* About Section */
-        .about-section {
-            min-height: 100vh;
-            padding: 120px 20px 80px;
-            background: linear-gradient(180deg, #1a1a2e 0%, #0f0f1e 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .about-container {
-            max-width: 900px;
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid #00d4ff;
-            border-radius: 20px;
-            padding: 60px;
-            box-shadow: 0 10px 40px rgba(0, 212, 255, 0.2);
-        }
-
-        .about-title {
-            font-size: 3rem;
-            color: #00d4ff;
-            margin-bottom: 30px;
-            text-align: center;
-            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
-        }
-
-        .about-content {
-            font-size: 1.3rem;
-            line-height: 1.8;
-            color: #e0f4ff;
-        }
-
-        .about-content p {
-            margin-bottom: 25px;
-        }
-
-        .about-highlight {
-            color: #00d4ff;
-            font-weight: bold;
-        }
-
-        /* Tech Scroll Section */
-        .tech-scroll-section {
-            padding: 40px 0;
-            background: linear-gradient(180deg, #0f0f1e 0%, #1a1a2e 50%, #0f0f1e 100%);
-            overflow: hidden;
-            position: relative;
-        }
-
-        .tech-scroll-container {
-            display: flex;
-            white-space: nowrap;
-            animation: scroll 40s linear infinite;
-        }
-
-        .tech-scroll-container:hover {
-            animation-play-state: paused;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-50%);
-            }
-        }
-
-        .tech-item {
-            display: inline-flex;
-            align-items: center;
-            padding: 15px 30px;
-            margin: 0 15px;
-            background: rgba(0, 212, 255, 0.1);
-            border: 2px solid #00d4ff;
-            border-radius: 25px;
-            font-size: 1.2rem;
-            color: #00d4ff;
-            transition: all 0.3s ease;
-        }
-
-        .tech-item.highlight {
-            background: rgba(0, 212, 255, 0.25);
-            border-color: #0099cc;
-            font-weight: bold;
-            transform: scale(1.1);
-        }
-
-        .tech-item:hover {
-            background: rgba(0, 212, 255, 0.2);
-            transform: scale(1.15);
-            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
-        }
-
-        /* Projects Section */
-        .projects-section {
-            min-height: 100vh;
-            padding: 120px 20px 80px;
-            background: linear-gradient(180deg, #0f0f1e 0%, #1a1a2e 100%);
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 3rem;
-            margin-bottom: 60px;
-            color: #00d4ff;
-            text-shadow: 0 0 20px rgba(0, 212, 255, 0.5);
-        }
-
-        .projects-container {
-            max-width: 1400px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-        }
-
-        .project-box {
-            background: rgba(255, 255, 255, 0.05);
-            border: 2px solid #00d4ff;
-            border-radius: 15px;
-            padding: 30px;
-            transition: all 0.3s ease;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .project-box:hover::before {
-            left: 100%;
-        }
-
-        .project-box:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 30px rgba(0, 212, 255, 0.3);
-            border-color: #0099cc;
-        }
-
-        .project-icon {
-            font-size: 3rem;
-            margin-bottom: 20px;
-            display: block;
-        }
-
-        .project-title {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            color: #00d4ff;
-        }
-
-        .project-description {
-            list-style: none;
-            margin-bottom: 20px;
-        }
-
-        .project-description li {
-            padding: 8px 0;
-            padding-left: 25px;
-            position: relative;
-            color: #90d4ff;
-        }
-
-        .project-description li::before {
-            content: '▹';
-            position: absolute;
-            left: 0;
-            color: #00d4ff;
-            font-weight: bold;
-        }
-
-        .project-link {
-            display: inline-block;
-            padding: 12px 25px;
-            background: linear-gradient(135deg, #00d4ff, #0099cc);
-            color: #fff;
-            text-decoration: none;
-            border-radius: 25px;
-            font-weight: bold;
-            transition: all 0.3s ease;
-            margin-top: 10px;
-            margin-right: 10px;
-        }
-
-        .project-link:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 212, 255, 0.4);
-        }
-
-        .project-link.private {
-            background: linear-gradient(135deg, #666, #444);
-            cursor: default;
-        }
-
-        .project-link.private:hover {
-            transform: none;
-            box-shadow: none;
-        }
-
-        .project-language {
-            display: inline-block;
-            padding: 5px 10px;
-            background: rgba(0, 212, 255, 0.2);
-            border-radius: 12px;
-            font-size: 0.85rem;
-            margin-top: 10px;
-            color: #00d4ff;
-        }
-
-        /* Footer */
-        .footer {
-            background: #0a0a0a;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .github-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            color: #00d4ff;
-            text-decoration: none;
-            font-size: 1.3rem;
-            transition: all 0.3s ease;
-        }
-
-        .github-link:hover {
-            color: #0099cc;
-            transform: scale(1.1);
-        }
-
-        .github-icon {
-            font-size: 2rem;
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            nav {
-                padding: 15px 20px;
-                gap: 20px;
-            }
-
-            nav a {
-                font-size: 1rem;
-                padding: 8px 15px;
-            }
-
-            .typing-container {
-                font-size: 2rem;
-            }
-
-            .about-container {
-                padding: 40px 30px;
-            }
-
-            .about-title {
-                font-size: 2.5rem;
-            }
-
-            .about-content {
-                font-size: 1.1rem;
-            }
-
-            .projects-container {
-                grid-template-columns: 1fr;
-            }
-
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .tech-item {
-                font-size: 1rem;
-                padding: 10px 20px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-    <!-- Navigation -->
-    <nav>
-        <a href="#home" class="nav-link active">Home</a>
-        <a href="#about" class="nav-link">About</a>
-        <a href="#projects" class="nav-link">Projects</a>
-    </nav>
+    <div class="noise"></div>
+    <div class="aurora-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+    <div class="grid-overlay"></div>
+    <div class="spotlight"></div>
 
-    <!-- Landing Section -->
-    <section id="home" class="landing">
-        <div class="typing-container">
-            mason can <span class="typing-text" id="typingText"></span>
-        </div>
-        <div class="scroll-indicator" onclick="document.querySelector('#about').scrollIntoView({behavior: 'smooth'})">
-            ↓
-        </div>
-    </section>
+    <!-- Desktop Navbar -->
+    <header class="navbar-container">
+        <nav class="glass-navbar">
+            <div class="nav-logo">
+                <div class="logo-box">
+                    <i data-lucide="code-2"></i>
+                </div>
+                <span>Mason</span>
+            </div>
+            <div class="nav-links">
+                <a href="#home" class="nav-link active">Home</a>
+                <a href="#skills" class="nav-link">Skills</a>
+                <a href="#experience" class="nav-link">Experience</a>
+                <a href="#portfolio" class="nav-link">Projects</a>
+                <a href="#contact" class="nav-link">Contact</a>
+            </div>
+        </nav>
+    </header>
 
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="about-container">
-            <h2 class="about-title">About Me</h2>
-            <div class="about-content">
-                <p>I've been interested in <span class="about-highlight">computers, AI, and code</span> since I was 9. I started experimenting with Python, HTML, and CSS, building whatever seemed cool and figuring it out along the way.</p>
-                
-                <p>Now I'm obsessed with <span class="about-highlight">AI</span> and try to keep up with every new paper that comes out. The field moves so fast, and there's always something new to learn.</p>
-                
-                <p>These days I work on stuff that either <span class="about-highlight">solves annoying problems</span> or explores ideas that might not work but are worth trying. Not everything pans out, but that's part of the process.</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container hero-content">
+            <!-- Profile Image Area -->
+            <div class="profile-wrapper reveal-on-scroll">
+                <div class="profile-image">
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Mason&backgroundColor=b6e3f4"
+                        alt="Mason Profile">
+                </div>
+                <!-- Availability Badge -->
+                <div class="availability-badge">
+                    <div class="badge-dot">
+                        <span class="dot-ping"></span>
+                        <span class="dot-inner"></span>
+                    </div>
+                    <div class="badge-tooltip">Available For Work</div>
+                </div>
+            </div>
+
+            <div class="hero-text reveal-on-scroll">
+                <h1 class="hero-title">
+                    Mason | <span class="gradient-text">AI Enthusiast</span> <br>
+                    & <span class="gradient-text">Modern Solutions Coder</span>
+                </h1>
+                <div class="typing-container">
+                    I'm <span class="typing-text" id="typingText"></span>
+                </div>
+                <p class="hero-description">
+                    I build <span class="badge-inline green"><i data-lucide="trending-up"></i> Scalable</span>,
+                    high-performance AI applications and modern web solutions with a focus on
+                    <span class="badge-inline blue"><i data-lucide="sparkles"></i> Experience</span> and
+                    <span class="badge-inline purple"><i data-lucide="network"></i> System Design</span>.
+                </p>
+            </div>
+
+            <!-- Action Buttons -->
+            <div class="hero-actions reveal-on-scroll">
+                <a href="#portfolio" class="btn btn-primary">
+                    <i data-lucide="folder-open"></i> View My Work
+                </a>
+                <a href="#contact" class="btn btn-secondary">
+                    <i data-lucide="mail"></i> Get in touch
+                </a>
+            </div>
+
+            <!-- Social Links -->
+            <div class="hero-socials reveal-on-scroll">
+                <a href="https://github.com/ru3tyYT" target="_blank" aria-label="GitHub"><i
+                        data-lucide="github"></i></a>
+                <a href="https://discord.com/users/712688991442436197" target="_blank" aria-label="Discord"><i
+                        data-lucide="message-square"></i></a>
             </div>
         </div>
     </section>
 
-    <!-- Tech Scroll Section -->
-    <section class="tech-scroll-section">
-        <div class="tech-scroll-container">
-            <span class="tech-item highlight">Python</span>
-            <span class="tech-item highlight">JavaScript</span>
-            <span class="tech-item">TypeScript</span>
-            <span class="tech-item highlight">HTML/CSS</span>
-            <span class="tech-item highlight">C++</span>
-            <span class="tech-item highlight">React</span>
-            <span class="tech-item">Node.js</span>
-            <span class="tech-item">Flask</span>
-            <span class="tech-item">Discord.py</span>
-            <span class="tech-item highlight">Gemini API</span>
-            <span class="tech-item">PyTorch</span>
-            <span class="tech-item">TensorFlow</span>
-            <span class="tech-item highlight">Git</span>
-            <span class="tech-item highlight">GitHub</span>
-            <span class="tech-item">REST APIs</span>
-            <span class="tech-item">SQL</span>
-            <span class="tech-item">MongoDB</span>
-            <!-- Duplicate for seamless loop -->
-            <span class="tech-item highlight">Python</span>
-            <span class="tech-item highlight">JavaScript</span>
-            <span class="tech-item">TypeScript</span>
-            <span class="tech-item highlight">HTML/CSS</span>
-            <span class="tech-item highlight">C++</span>
-            <span class="tech-item highlight">React</span>
-            <span class="tech-item">Node.js</span>
-            <span class="tech-item">Flask</span>
-            <span class="tech-item">Discord.py</span>
-            <span class="tech-item highlight">Gemini API</span>
-            <span class="tech-item">PyTorch</span>
-            <span class="tech-item">TensorFlow</span>
-            <span class="tech-item highlight">Git</span>
-            <span class="tech-item highlight">GitHub</span>
-            <span class="tech-item">REST APIs</span>
-            <span class="tech-item">SQL</span>
-            <span class="tech-item">MongoDB</span>
+    <!-- Skills Section -->
+    <section id="skills">
+        <div class="container">
+            <div class="section-heading reveal-on-scroll">
+                <span class="section-subtitle">Tech Stack</span>
+                <h2 class="section-title">Skills</h2>
+                <p class="section-description">The technologies I build with.</p>
+            </div>
+
+            <div class="skills-grid">
+                <!-- React -->
+                <div class="skill-item" data-color="#61DAFB">
+                    <div class="skill-icon"><i data-lucide="atom"></i></div>
+                    <span class="skill-tooltip">React</span>
+                </div>
+                <!-- Next.js -->
+                <div class="skill-item" data-color="#ffffff">
+                    <div class="skill-icon"><i data-lucide="layers"></i></div>
+                    <span class="skill-tooltip">Next.js</span>
+                </div>
+                <!-- TypeScript -->
+                <div class="skill-item" data-color="#3178C6">
+                    <div class="skill-icon"><i data-lucide="code-2"></i></div>
+                    <span class="skill-tooltip">TypeScript</span>
+                </div>
+                <!-- Python -->
+                <div class="skill-item" data-color="#3776AB">
+                    <div class="skill-icon"><i data-lucide="terminal"></i></div>
+                    <span class="skill-tooltip">Python</span>
+                </div>
+                <!-- Tailwind -->
+                <div class="skill-item" data-color="#06B6D4">
+                    <div class="skill-icon"><i data-lucide="palette"></i></div>
+                    <span class="skill-tooltip">Tailwind</span>
+                </div>
+                <!-- Node.js -->
+                <div class="skill-item" data-color="#339933">
+                    <div class="skill-icon"><i data-lucide="server"></i></div>
+                    <span class="skill-tooltip">Node.js</span>
+                </div>
+                <!-- PostgreSQL -->
+                <div class="skill-item" data-color="#4169E1">
+                    <div class="skill-icon"><i data-lucide="database"></i></div>
+                    <span class="skill-tooltip">PostgreSQL</span>
+                </div>
+                <!-- Docker -->
+                <div class="skill-item" data-color="#2496ED">
+                    <div class="skill-icon"><i data-lucide="box"></i></div>
+                    <span class="skill-tooltip">Docker</span>
+                </div>
+                <!-- Git -->
+                <div class="skill-item" data-color="#F05032">
+                    <div class="skill-icon"><i data-lucide="git-branch"></i></div>
+                    <span class="skill-tooltip">Git</span>
+                </div>
+                <!-- AWS -->
+                <div class="skill-item" data-color="#FF9900">
+                    <div class="skill-icon"><i data-lucide="cloud"></i></div>
+                    <span class="skill-tooltip">AWS</span>
+                </div>
+            </div>
+
+            <div class="skills-footer reveal-on-scroll">
+                <div class="arsenal-badge">
+                    <i data-lucide="code"></i>
+                    <span>20+ technologies in my arsenal</span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-        <h2 class="section-title">My Projects</h2>
-        <div class="projects-container">
-            <!-- School AI Tutoring Website -->
-            <div class="project-box">
-                <span class="project-icon">🌐</span>
-                <h3 class="project-title">School AI Tutoring</h3>
-                <span class="project-language">HTML • Python</span>
-                <ul class="project-description">
-                    <li>AI tutoring website using Gemini model</li>
-                    <li>Custom prompts for student learning</li>
-                    <li>Requires own API key</li>
-                </ul>
-                <a href="https://cheatengine.onrender.com/" target="_blank" class="project-link">Visit Website →</a>
-                <span class="project-link private">🔒 Private – Available for purchase</span>
+    <!-- Experience Section -->
+    <section id="experience">
+        <div class="container">
+            <div class="section-heading reveal-on-scroll">
+                <span class="section-subtitle">Experience</span>
+                <h2 class="section-title">Work History</h2>
+                <p class="section-description">Building scalable solutions and leading technical development.</p>
             </div>
 
-            <!-- F1 Driving Simulator -->
-            <div class="project-box">
-                <span class="project-icon">🏎️</span>
-                <h3 class="project-title">F1 Driving Simulator</h3>
-                <span class="project-language">TypeScript • CSS</span>
-                <ul class="project-description">
-                    <li>Full F1 racing simulator (in making)</li>
-                    <li>Realistic F1 rendering and physics</li>
-                    <li>Available on Roblox and web</li>
-                </ul>
-                <span class="project-link private">🔒 Available for purchase</span>
+            <div class="experience-list">
+                <!-- Revolution Macro -->
+                <div class="experience-card reveal-on-scroll">
+                    <div class="exp-header">
+                        <div class="exp-role">
+                            <h3>Developer and Admin</h3>
+                            <a href="https://discord.gg/revolutionmacro" target="_blank" class="exp-company">
+                                Revolution Macro <i data-lucide="external-link"></i>
+                            </a>
+                        </div>
+                        <span class="exp-date">2025 - 2026 (Present)</span>
+                    </div>
+                    <div class="exp-content">
+                        <p>Server Utilities and Tools Developer, learning technical infrastructure initiatives and
+                            architecting scalable AI solutions.</p>
+                        <ul>
+                            <li><i data-lucide="check-circle"></i> Built AI-powered moderation + support bot mainly in
+                                Python.</li>
+                            <li><i data-lucide="check-circle"></i> Managing community operations and technical
+                                infrastructure for the macro group.</li>
+                        </ul>
+                    </div>
+                    <div class="exp-tech-tags">
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">Discord.py</span>
+                        <span class="tech-tag">AI Moderation</span>
+                        <span class="tech-tag">System Design</span>
+                    </div>
+
+                    <!-- Discord Widget Integration -->
+                    <div class="discord-widget-container">
+                        <div class="exp-members-badge">
+                            <i data-lucide="users"></i>
+                            <span id="discord-member-count">Loading Members...</span>
+                        </div>
+                        <iframe src="https://discord.com/widget?id=1265864190883532872&theme=dark" width="100%"
+                            height="150" allowtransparency="true" frameborder="0"
+                            sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+                        <p class="widget-note">Join our community at <a href="https://discord.gg/revolutionmacro"
+                                target="_blank">discord.gg/revolutionmacro</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="section-heading reveal-on-scroll">
+                <span class="section-subtitle">Featured Work</span>
+                <h2 class="section-title">Selected Projects</h2>
             </div>
 
-            <!-- Flying Simulator -->
-            <div class="project-box">
-                <span class="project-icon">✈️</span>
-                <h3 class="project-title">Flight Simulator</h3>
-                <span class="project-language">TypeScript • CSS</span>
-                <ul class="project-description">
-                    <li>Full flying simulator (in making)</li>
-                    <li>Realistic flight physics</li>
-                    <li>Multiple aircraft and environments</li>
-                </ul>
-                <span class="project-link private">🔒 Private – Available for purchase</span>
+            <div class="projects-grid">
+                <!-- Featured: CalTrack -->
+                <div class="project-card reveal-on-scroll featured">
+                    <span class="featured-label">FEATURED</span>
+                    <div class="project-icon"><i data-lucide="apple"></i></div>
+                    <h3>CalTrack</h3>
+                    <p>AI-powered food analysis with Gemini Pro Vision image recognition and multi-database search.</p>
+                    <div class="project-tags">
+                        <span class="tag">Next.js</span>
+                        <span class="tag">Gemini API</span>
+                        <span class="tag">AI</span>
+                    </div>
+                    <div class="project-links">
+                        <span class="private-link"><i data-lucide="lock"></i> Private</span>
+                    </div>
+                </div>
+
+                <!-- Featured: F1 Simulation -->
+                <div class="project-card reveal-on-scroll featured">
+                    <span class="featured-label">FEATURED</span>
+                    <div class="project-icon"><i data-lucide="flag"></i></div>
+                    <h3>F1 Driving Simulator</h3>
+                    <p>High-performance racing simulator built with TypeScript and advanced physics modules.</p>
+                    <div class="project-tags">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Canvas</span>
+                        <span class="tag">Physics</span>
+                    </div>
+                    <div class="project-links">
+                        <span class="private-link"><i data-lucide="lock"></i> WIP / Private</span>
+                    </div>
+                </div>
+
+                <!-- Featured: Flight Simulation -->
+                <div class="project-card reveal-on-scroll featured">
+                    <span class="featured-label">FEATURED</span>
+                    <div class="project-icon"><i data-lucide="plane"></i></div>
+                    <h3>Flight Simulator</h3>
+                    <p>Realistic flight simulation engine with environmental rendering and control systems.</p>
+                    <div class="project-tags">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">CSS3D</span>
+                        <span class="tag">Simulation</span>
+                    </div>
+                    <div class="project-links">
+                        <span class="private-link"><i data-lucide="lock"></i> WIP / Private</span>
+                    </div>
+                </div>
+
+                <!-- Featured: Bee Swarm Macro -->
+                <div class="project-card reveal-on-scroll featured">
+                    <span class="featured-label">FEATURED</span>
+                    <div class="project-icon"><i data-lucide="cpu"></i></div>
+                    <h3>Bee Swarm Boost Macro</h3>
+                    <p>Automated Roblox macro for efficiency optimization (Python-based).</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Automation</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/ru3tyYT/duckbooster" target="_blank"><i data-lucide="github"></i>
+                            Repository</a>
+                    </div>
+                </div>
+
+                <!-- Featured: School AI -->
+                <div class="project-card reveal-on-scroll featured">
+                    <span class="featured-label">FEATURED</span>
+                    <div class="project-icon"><i data-lucide="graduation-cap"></i></div>
+                    <h3>School AI Tutoring</h3>
+                    <p>AI tutoring platform using Gemini models for personalized student support.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Gemini</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://cheatengine.onrender.com/" target="_blank"><i data-lucide="external-link"></i>
+                            View Live</a>
+                    </div>
+                </div>
+
+                <!-- Moderation Bot -->
+                <div class="project-card reveal-on-scroll">
+                    <div class="project-icon"><i data-lucide="shield-check"></i></div>
+                    <h3>AI Moderation Bot</h3>
+                    <p>Advanced Discord moderation with context analysis and auto-translation.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">Discord.py</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/ru3tyYT/Moderation-Bot" target="_blank"><i data-lucide="github"></i>
+                            Repository</a>
+                    </div>
+                </div>
+
+                <!-- Verification Bot -->
+                <div class="project-card reveal-on-scroll">
+                    <div class="project-icon"><i data-lucide="user-check"></i></div>
+                    <h3>Verification Bot</h3>
+                    <p>Secure entry system for Discord servers preventing unauthorized access.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/ru3tyYT/Verification-Bot" target="_blank"><i
+                                data-lucide="github"></i> Repository</a>
+                    </div>
+                </div>
+
+                <!-- Support Bot -->
+                <div class="project-card reveal-on-scroll">
+                    <div class="project-icon"><i data-lucide="help-circle"></i></div>
+                    <h3>Support Bot</h3>
+                    <p>Ticketing and support system for community server management.</p>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/ru3tyYT/Revolution-Support" target="_blank"><i
+                                data-lucide="github"></i> Repository</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact">
+        <div class="container">
+            <div class="section-heading reveal-on-scroll">
+                <span class="section-subtitle">Get in Touch</span>
+                <h2 class="section-title">Contact</h2>
+                <p class="section-description">Open for collaborations and inquiries.</p>
             </div>
 
-            <!-- Discord Moderation Bot -->
-            <div class="project-box">
-                <span class="project-icon">🛡️</span>
-                <h3 class="project-title">Discord Moderation Bot</h3>
-                <span class="project-language">Python</span>
-                <ul class="project-description">
-                    <li>AI-Powered moderation with Gemini API</li>
-                    <li>Context-aware detection, severity rating system</li>
-                    <li>Multi-language support with auto-translation</li>
-                </ul>
-                <a href="https://github.com/ru3tyYT/Moderation-Bot" target="_blank" class="project-link">View on GitHub →</a>
-            </div>
-
-            <!-- Discord Verification Bot -->
-            <div class="project-box">
-                <span class="project-icon">✅</span>
-                <h3 class="project-title">Discord Verification Bot</h3>
-                <span class="project-language">Python</span>
-                <ul class="project-description">
-                    <li>Verification bot in making</li>
-                    <li>Prevents bots from accessing server</li>
-                    <li>Ensures users agree to server rules</li>
-                </ul>
-                <a href="https://github.com/ru3tyYT/Verification-Bot" target="_blank" class="project-link">View on GitHub →</a>
-            </div>
-
-            <!-- Discord Support Bot -->
-            <div class="project-box">
-                <span class="project-icon">🤖</span>
-                <h3 class="project-title">Discord Support Bot</h3>
-                <span class="project-language">Python</span>
-                <ul class="project-description">
-                    <li>Simple support bot for Discord</li>
-                    <li>Automated response handling</li>
-                    <li>Ticket system for user support</li>
-                </ul>
-                <a href="https://github.com/ru3tyYT/Revolution-Support" target="_blank" class="project-link">View on GitHub →</a>
-            </div>
-
-            <!-- Bee Swarm Boost Macro -->
-            <div class="project-box">
-                <span class="project-icon">🐝</span>
-                <h3 class="project-title">Bee Swarm Boost Macro</h3>
-                <span class="project-language">Python (Obfuscated)</span>
-                <ul class="project-description">
-                    <li>Automated boost macro for Bee Swarm Simulator</li>
-                    <li>Obfuscated Python code</li>
-                    <li>Only tested on Mac</li>
-                </ul>
-                <a href="https://github.com/ru3tyYT/duckbooster" target="_blank" class="project-link">View on GitHub →</a>
+            <div class="contact-grid reveal-on-scroll">
+                <a href="https://github.com/ru3tyYT" target="_blank" class="contact-card">
+                    <div class="contact-icon"><i data-lucide="github"></i></div>
+                    <div class="contact-info">
+                        <h3>GitHub</h3>
+                        <span>@ru3tyYT</span>
+                    </div>
+                    <i data-lucide="external-link" class="arrow"></i>
+                </a>
+                <a href="https://discord.com/users/712688991442436197" target="_blank" class="contact-card discord">
+                    <div class="contact-icon"><i data-lucide="message-square"></i></div>
+                    <div class="contact-info">
+                        <h3>Discord</h3>
+                        <span>712688991442436197</span>
+                    </div>
+                    <i data-lucide="external-link" class="arrow"></i>
+                </a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer class="footer">
-        <a href="https://github.com/ru3tyYT" target="_blank" class="github-link">
-            <span class="github-icon">🔗</span>
-            <span>Find me on GitHub: ru3tyYT</span>
-        </a>
+        <div class="container">
+            <p>© 2026 Mason. Built with Passion and AI.</p>
+        </div>
     </footer>
 
+    <script src="script.js"></script>
     <script>
-        // Typing animation
-        const words = ['code', 'obfuscate', 'deobfuscate', 'decompile', 'compile', 'learn', 'create'];
-        let wordIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-        const typingElement = document.getElementById('typingText');
-
-        function type() {
-            const currentWord = words[wordIndex];
-            
-            if (isDeleting) {
-                typingElement.textContent = currentWord.substring(0, charIndex - 1);
-                charIndex--;
-            } else {
-                typingElement.textContent = currentWord.substring(0, charIndex + 1);
-                charIndex++;
-            }
-
-            let timeout = isDeleting ? 100 : 150;
-
-            if (!isDeleting && charIndex === currentWord.length) {
-                timeout = 2000;
-                isDeleting = true;
-            } else if (isDeleting && charIndex === 0) {
-                isDeleting = false;
-                wordIndex = (wordIndex + 1) % words.length;
-                timeout = 500;
-            }
-
-            setTimeout(type, timeout);
-        }
-
-        type();
-
-        // Navigation active state
-        const navLinks = document.querySelectorAll('.nav-link');
-        const sections = document.querySelectorAll('section');
-
-        window.addEventListener('scroll', () => {
-            let current = '';
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                if (scrollY >= sectionTop - 100) {
-                    current = section.getAttribute('id');
-                }
-            });
-
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href').substring(1) === current) {
-                    link.classList.add('active');
-                }
-            });
-        });
-
-        // Smooth scroll for nav
-        navLinks.forEach(link => {
-            link.addEventListener('click', (e) => {
-                e.preventDefault();
-                const targetId = link.getAttribute('href');
-                const targetSection = document.querySelector(targetId);
-                targetSection.scrollIntoView({ behavior: 'smooth' });
-            });
-        });
+        // Initialize Lucide icons
+        lucide.createIcons();
     </script>
 </body>
+
 </html>
