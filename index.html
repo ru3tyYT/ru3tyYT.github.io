@@ -537,6 +537,13 @@
             transition: var(--transition);
         }
 
+        .skill-icon img {
+            width: 32px;
+            height: 32px;
+            display: block;
+            transition: var(--transition);
+        }
+
         .skill-item:hover .skill-icon svg {
             color: var(--skill-color);
         }
@@ -1047,30 +1054,26 @@
             </div>
 
             <div class="skills-grid">
-                <!-- React -->
-                <div class="skill-item" data-color="#61DAFB">
-                    <div class="skill-icon"><i data-lucide="atom"></i></div>
-                    <span class="skill-tooltip">React</span>
-                </div>
-                <!-- Next.js -->
-                <div class="skill-item" data-color="#ffffff">
-                    <div class="skill-icon"><i data-lucide="layers"></i></div>
-                    <span class="skill-tooltip">Next.js</span>
-                </div>
                 <!-- TypeScript -->
                 <div class="skill-item" data-color="#3178C6">
                     <div class="skill-icon"><i data-lucide="code-2"></i></div>
                     <span class="skill-tooltip">TypeScript</span>
+                </div>
+                <!-- Rust -->
+                <div class="skill-item" data-color="#DEA584">
+                    <div class="skill-icon"><img src="https://cdn.simpleicons.org/rust/DEA584" alt="Rust logo"></div>
+                    <span class="skill-tooltip">Rust</span>
                 </div>
                 <!-- Python -->
                 <div class="skill-item" data-color="#3776AB">
                     <div class="skill-icon"><i data-lucide="terminal"></i></div>
                     <span class="skill-tooltip">Python</span>
                 </div>
-                <!-- Tailwind -->
-                <div class="skill-item" data-color="#06B6D4">
-                    <div class="skill-icon"><i data-lucide="palette"></i></div>
-                    <span class="skill-tooltip">Tailwind</span>
+                <!-- PLpgSQL -->
+                <div class="skill-item" data-color="#4169E1">
+                    <div class="skill-icon"><img src="https://cdn.simpleicons.org/postgresql/4169E1"
+                            alt="PostgreSQL logo"></div>
+                    <span class="skill-tooltip">PLpgSQL</span>
                 </div>
                 <!-- Node.js -->
                 <div class="skill-item" data-color="#339933">
@@ -1082,6 +1085,21 @@
                     <div class="skill-icon"><i data-lucide="database"></i></div>
                     <span class="skill-tooltip">PostgreSQL</span>
                 </div>
+                <!-- React -->
+                <div class="skill-item" data-color="#61DAFB">
+                    <div class="skill-icon"><i data-lucide="atom"></i></div>
+                    <span class="skill-tooltip">React</span>
+                </div>
+                <!-- Next.js -->
+                <div class="skill-item" data-color="#ffffff">
+                    <div class="skill-icon"><i data-lucide="layers"></i></div>
+                    <span class="skill-tooltip">Next.js</span>
+                </div>
+                <!-- Tailwind -->
+                <div class="skill-item" data-color="#06B6D4">
+                    <div class="skill-icon"><i data-lucide="palette"></i></div>
+                    <span class="skill-tooltip">Tailwind</span>
+                </div>
                 <!-- Docker -->
                 <div class="skill-item" data-color="#2496ED">
                     <div class="skill-icon"><i data-lucide="box"></i></div>
@@ -1092,17 +1110,54 @@
                     <div class="skill-icon"><i data-lucide="git-branch"></i></div>
                     <span class="skill-tooltip">Git</span>
                 </div>
-                <!-- AWS -->
-                <div class="skill-item" data-color="#FF9900">
-                    <div class="skill-icon"><i data-lucide="cloud"></i></div>
-                    <span class="skill-tooltip">AWS</span>
+                <!-- Railway -->
+                <div class="skill-item" data-color="#ffffff">
+                    <div class="skill-icon"><img src="https://cdn.simpleicons.org/railway/ffffff" alt="Railway logo">
+                    </div>
+                    <span class="skill-tooltip">Railway</span>
+                </div>
+                <!-- Render -->
+                <div class="skill-item" data-color="#46E3B7">
+                    <div class="skill-icon"><img src="https://cdn.simpleicons.org/render/46E3B7" alt="Render logo">
+                    </div>
+                    <span class="skill-tooltip">Render</span>
+                </div>
+                <!-- Vercel -->
+                <div class="skill-item" data-color="#ffffff">
+                    <div class="skill-icon"><img src="https://cdn.simpleicons.org/vercel/ffffff" alt="Vercel logo">
+                    </div>
+                    <span class="skill-tooltip">Vercel</span>
+                </div>
+                <!-- Vercel CLI -->
+                <div class="skill-item" data-color="#ffffff">
+                    <div class="skill-icon"><img src="https://cdn.simpleicons.org/vercel/ffffff"
+                            alt="Vercel CLI logo"></div>
+                    <span class="skill-tooltip">Vercel CLI</span>
+                </div>
+                <!-- Docker Compose -->
+                <div class="skill-item" data-color="#2496ED">
+                    <div class="skill-icon"><img src="https://cdn.simpleicons.org/docker/2496ED" alt="Docker logo">
+                    </div>
+                    <span class="skill-tooltip">Docker Compose</span>
+                </div>
+                <!-- Redis -->
+                <div class="skill-item" data-color="#DC382D">
+                    <div class="skill-icon"><img src="https://cdn.simpleicons.org/redis/DC382D" alt="Redis logo">
+                    </div>
+                    <span class="skill-tooltip">Redis</span>
+                </div>
+                <!-- Supabase -->
+                <div class="skill-item" data-color="#3ECF8E">
+                    <div class="skill-icon"><img src="https://cdn.simpleicons.org/supabase/3ECF8E" alt="Supabase logo">
+                    </div>
+                    <span class="skill-tooltip">Supabase</span>
                 </div>
             </div>
 
             <div class="skills-footer reveal-on-scroll">
                 <div class="arsenal-badge">
                     <i data-lucide="code"></i>
-                    <span>20+ technologies in my arsenal</span>
+                    <span>30+ technologies in my arsenal</span>
                 </div>
             </div>
         </div>
@@ -1172,6 +1227,25 @@
             </div>
 
             <div class="projects-grid">
+                <!-- Featured: Bee Swarm Trading -->
+                <div class="project-card reveal-on-scroll featured">
+                    <span class="featured-label">FEATURED</span>
+                    <div class="project-icon"><i data-lucide="hexagon"></i></div>
+                    <h3>Bee Swarm Trading Hub</h3>
+                    <p>Value tracker and trade marketplace where players can check value lists and post custom trade
+                        offers.</p>
+                    <div class="project-tags">
+                        <span class="tag">TypeScript</span>
+                        <span class="tag">Rust</span>
+                        <span class="tag">Docker</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">PLpgSQL</span>
+                    </div>
+                    <div class="project-links">
+                        <span class="private-link"><i data-lucide="lock"></i> In Development</span>
+                    </div>
+                </div>
+
                 <!-- Featured: CalTrack -->
                 <div class="project-card reveal-on-scroll featured">
                     <span class="featured-label">FEATURED</span>
@@ -1220,34 +1294,20 @@
                     </div>
                 </div>
 
-                <!-- Featured: Bee Swarm Macro -->
-                <div class="project-card reveal-on-scroll featured">
-                    <span class="featured-label">FEATURED</span>
-                    <div class="project-icon"><i data-lucide="cpu"></i></div>
-                    <h3>Bee Swarm Boost Macro</h3>
-                    <p>Automated Roblox macro for efficiency optimization (Python-based).</p>
-                    <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Automation</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/ru3tyYT/duckbooster" target="_blank"><i data-lucide="github"></i>
-                            Repository</a>
-                    </div>
-                </div>
-
-                <!-- Featured: School AI -->
+                <!-- Featured: TrixChat -->
                 <div class="project-card reveal-on-scroll featured">
                     <span class="featured-label">FEATURED</span>
                     <div class="project-icon"><i data-lucide="graduation-cap"></i></div>
-                    <h3>School AI Tutoring</h3>
-                    <p>AI tutoring platform using Gemini models for personalized student support.</p>
+                    <h3>TrixChat</h3>
+                    <p>AI chatbot tailored for school tutoring and assistance with top-tier models and one of the
+                        fastest optimized chat experiences.</p>
                     <div class="project-tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">Gemini</span>
+                        <span class="tag">AI Chatbot</span>
+                        <span class="tag">Tutoring</span>
+                        <span class="tag">Fast Inference</span>
                     </div>
                     <div class="project-links">
-                        <a href="https://cheatengine.onrender.com/" target="_blank"><i data-lucide="external-link"></i>
+                        <a href="https://trixchat.vercel.app" target="_blank"><i data-lucide="external-link"></i>
                             View Live</a>
                     </div>
                 </div>
